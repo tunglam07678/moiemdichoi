@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mời em đi chơi</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <audio id="bgMusic" loop>
+        <source src="nhac.mp3" type="audio/mpeg">
+    </audio>
+    <div id="app">
+        <!-- Trang 1 -->
+        <div id="page1" class="page active">
+            <h1>Welcome ❤️</h1>
+            <p>Cảm ơn em đã đăng nhập link này.</p>
+            <p>Để hỗ trợ cho việc đi chơi  diễn ra tốt đẹp, thì đây là một vài câu hỏi anh muốn hỏi em, và cũng
+                như là lời mời em đi chơi.</p>
+            <button onclick="nextPage('page2')" class="primary-btn">Bắt đầu nào</button>
+        </div>
+
+        <!-- Trang 2 -->
+        <div id="page2" class="page">
+            <h2>Em có đồng ý vào chủ nhật tuần này đi chơi với anh không? 🥺</h2>
+            <div class="buttons-container" id="container2">
+                <button id="btnYes2" class="primary-btn btn-yes" onclick="nextPage('page3')">Yes</button>
+                <button id="btnNo2" class="btn-no" onmouseover="moveButton('btnNo2')"
+                    ontouchstart="moveButton('btnNo2')" onclick="moveButton('btnNo2')">No</button>
+            </div>
+        </div>
+
+        <!-- Trang 3 -->
+        <div id="page3" class="page">
+            <h2>Em để anh đón bé đi nhé 🚗</h2>
+            <div class="buttons-container" id="container3">
+                <button id="btnYes3" class="primary-btn btn-yes" onclick="nextPage('page4')">Yes</button>
+                <button id="btnNo3" class="btn-no" onmouseover="moveButton('btnNo3')"
+                    ontouchstart="moveButton('btnNo3')" onclick="moveButton('btnNo3')">No</button>
+            </div>
+        </div>
+
+        <!-- Trang 4 -->
+        <div id="page4" class="page">
+            <h2>Cảm ơn em đã chấp nhận đi chơi với anh! 🎉</h2>
+            <p>Nếu giả dụ em là một loài hoa, hoặc một màu hoa, em sẽ chọn loại gì?</p>
+            <input type="text" id="flowerInput" placeholder="Nhập câu trả lời của em ở đây..." />
+            <button onclick="nextPage('page5')" class="primary-btn">Tiếp tục nào</button>
+        </div>
+
+        <!-- Trang 5 (Câu hỏi thêm) -->
+        <div id="page5" class="page">
+            <h2>Ngoài ra em có muốn làm gì tiếp theo hay có câu hỏi gì cho anh không? 🤔</h2>
+            <textarea id="questionInput" placeholder="Viết gì đó cho anh đi..." rows="4"></textarea>
+            <button onclick="finish()" class="primary-btn">Gửi tất cả cho anh</button>
+        </div>
+
+        <!-- Trang 6 (Kết thúc) -->
+        <div id="page6" class="page">
+            <h1>Tuyệt vời!</h1>
+            <p>Anh đã ghi nhận câu trả lời của em! Hẹn gặp em vào thứ 3 nha! 💕</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
